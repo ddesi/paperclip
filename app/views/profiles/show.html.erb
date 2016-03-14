@@ -1,0 +1,17 @@
+<h1>Profile Page</h1>
+<div>
+	<p>this is <%= @profile.username %>'s page</p>
+	<p>this is the avatar:</p>
+	<%= image_tag @profile.avatar.url(:medium) %>
+	<p><%= link_to("Edit Profile", edit_profile_path(@profile.id), method: :get )%></p>
+</div>
+
+<div>
+	<p>choose username:</p>
+	<%= form_for @profile, :url => profile_path(@profile),
+	:html => { :multipart => true } do |f| %>
+  	<p><%= f.label :username, "Username:" %> <%= f.text_field :username %></p>
+  	<p><%= f.file_field :avatar %></p>
+  	<p><%= f.submit("Submit") %></p>
+<% end %>
+</div>

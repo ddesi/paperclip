@@ -1,0 +1,7 @@
+<ul>
+  <% @profiles.each do |p| %>
+
+    <li><%= link_to("#{p.username}'s profile page", profile_path(p.user.id), method: :get) %></li>
+
+  <% end %>
+</ul>

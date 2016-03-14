@@ -1,0 +1,9 @@
+<div>
+	<p>edit info:</p>
+	<%= form_for @profile, :url => profile_path(@profile),
+	:html => { :multipart => true } do |f| %>
+  	<p><%= f.label :fname, "Username:" %> <%= f.text_field :username %></p>
+  	<p><%= f.file_field :avatar %></p>
+  	<p><%= f.submit("submit") %></p>
+<% end %>
+</div>
